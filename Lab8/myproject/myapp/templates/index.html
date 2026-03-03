@@ -1,0 +1,107 @@
+{% extends "Base.html" %}
+
+{% block content %}
+
+<style>
+    .cafe-card {
+        border: none;
+        border-radius: 25px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .cafe-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 40px rgba(111, 78, 55, 0.15) !important;
+    }
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        background: #fdf5e6;
+        color: #6F4E37;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+    }
+
+    .map-container {
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border: 8px solid white;
+    }
+    .section-title {
+        color: #6F4E37;
+        font-weight: 700;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #C19A6B;
+        margin: 10px auto;
+    }
+</style>
+
+<div class="container py-5">
+    <h2 class="text-center section-title">ข้อมูลร้านของเรา</h2>
+    
+    <div class="row g-4 text-center mb-5">
+        <div class="col-md-4">
+            <div class="card cafe-card p-4 shadow-sm">
+                <div class="icon-circle">
+                    <i class="bi bi-cup-hot fs-1"></i>
+                </div>
+                <h3 class="h5 fw-bold">สินค้าของเรา</h3>
+                <p class="text-muted small">เมล็ดกาแฟคั่วสดใหม่จากดอยสูง และเบเกอรี่โฮมเมดที่อบสดใหม่ทุกวัน</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card cafe-card p-4 shadow-sm">
+                <div class="icon-circle">
+                    <i class="bi bi-wifi fs-1"></i>
+                </div>
+                <h3 class="h5 fw-bold">บริการ</h3>
+                <p class="text-muted small">พื้นที่ Co-working Space พร้อม Wi-Fi ความเร็วสูง และมุมถ่ายรูปสุดชิค</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card cafe-card p-4 shadow-sm">
+                <div class="icon-circle">
+                    <i class="bi bi-house-heart fs-1"></i>
+                </div>
+                <h3 class="h5 fw-bold">เกี่ยวกับเรา</h3>
+                <p class="text-muted small">คาเฟ่เล็กๆ ที่สร้างขึ้นด้วยความรักในศิลปะการชงกาแฟ ตั้งแต่ปี 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="text-center mb-4 fw-bold" style="color: #6F4E37;">พิกัดร้านของเรา</h3>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.50261622312!2d100.528348!3d13.756331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQ1JzIyLjgiTiAxMDDCsDMxJzQyLjEiRQ!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" 
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="text-center mt-3 text-muted">
+                <i class="bi bi-geo-alt-fill me-1"></i> 123 ถนนสุขุมวิท, กรุงเทพมหานคร | เปิดทุกวัน 08:00 - 18:00 น.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
