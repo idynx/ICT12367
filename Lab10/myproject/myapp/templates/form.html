@@ -1,0 +1,106 @@
+{% extends "Base.html" %}
+
+{% block title %}
+    <title>Member Registration | COFFEE SPACE</title>
+{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #fdfaf7;
+    }
+    .form-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 50px auto;
+        box-shadow: 0 10px 25px rgba(111, 78, 55, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        border: none;
+    }
+    .card-header-custom {
+        background-color: #6F4E37;
+        color: white;
+        padding: 20px;
+        font-weight: bold;
+        font-size: 1.4rem;
+        text-align: center;
+        border-bottom: 5px solid #5a3e2b;
+    }
+    .form-label {
+        color: #5a3e2b;
+        font-weight: 600;
+    }
+    .form-control {
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+    }
+    .form-control:focus {
+        border-color: #6F4E37;
+        box-shadow: 0 0 0 0.25rem rgba(111, 78, 55, 0.25);
+    }
+
+    .btn-register {
+        background-color: #4E6E5D; 
+        color: white;
+        border: none;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    .btn-register:hover {
+        background-color: #3d5648;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .btn-clear {
+        background-color: #bc8e5c;
+        color: white;
+        border: none;
+        border-radius: 10px;
+    }
+    .btn-clear:hover {
+        background-color: #a67c4e;
+        color: white;
+    }
+</style>
+
+<div class="card form-container">
+    <div class="card-header-custom">
+        <i class="bi bi-person-badge-fill me-2"></i>สมัครสมาชิก COFFEE SPACE
+    </div>
+    <div class="card-body p-4">
+        <p class="text-center text-muted mb-4">ร่วมเป็นครอบครัวเดียวกับเราเพื่อรับสิทธิพิเศษและส่วนลดมากมาย</p>
+        
+        <form method="POST" action=""> 
+            {% csrf_token %} 
+            
+            <div class="mb-3">
+                <label for="fullName" class="form-label">ชื่อ-นามสกุล</label>
+                <input type="text" name="full_name" class="form-control" id="fullName" placeholder="เช่น สมชาย รักกาแฟ" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="fav_menu" class="form-label">เมนูที่ชื่นชอบ</label>
+                <select name="fav_menu" class="form-select" id="fav_menu" style="border-radius: 10px;">
+                    <option selected disabled>เลือกเมนูโปรดของคุณ...</option>
+                    <option value="espresso">Espresso</option>
+                    <option value="latte">Latte</option>
+                    <option value="cappuccino">Cappuccino</option>
+                    <option value="americano">Americano</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="phone" class="form-label">เบอร์โทรศัพท์ (สำหรับสะสมแต้ม)</label>
+                <input type="tel" name="phone" class="form-control" id="phone" placeholder="08X-XXX-XXXX" required>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-register py-2 fw-bold">ลงทะเบียนสมาชิก</button>
+                <button type="reset" class="btn btn-clear py-2">ยกเลิก</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "Base.html"%}
+
+{% block title %}
+    <title>เกี่ยวกับเรา</title>
+{% endblock %}
+
+{% block content %}
+<style>
+    .gallery-container {
+        padding: 20px;
+        background-color: #fff;
+    }
+    .gallery-item {
+        margin-bottom: 20px;
+    }
+    .gallery-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+    .gallery-img:hover {
+        transform: scale(1.03);
+    }
+    .gallery-title {
+        margin-bottom: 25px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+</style>
+
+<div class="container gallery-container">
+    <h2 class="gallery-title">คลังภาพกาแฟของเรา</h2>
+    
+<div class="row">
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Cafe Interior">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Latte Art">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Coffee Beans">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Coffee Shop Corner">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Drip Coffee">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Coffee to go">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Brewing Gear">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Barista at work">
+        </div>
+        <div class="col-md-4 col-sm-6 gallery-item">
+            <img src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?q=80&w=1000&auto=format&fit=crop" class="gallery-img" alt="Coffee and Cake">
+        </div>
+    </div>
+</div>
+{% endblock %}
